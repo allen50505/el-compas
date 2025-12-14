@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Compás</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+<h1>El Compás</h1>
+
+
+<section>
+<input id="inputTexto" placeholder="Texto a cifrar">
+<button id="cifrarBtn">Cifrar</button>
+<pre id="salida"></pre>
+</section>
+
+
+<aside>
+<h3>Mensaje objetivo</h3>
+<pre id="objetivo"></pre>
+</aside>
+
+
+<section>
+<h3>Paquetes de pistas</h3>
+<div>
+<button onclick="abrirPaquete(1)">Paquete 1</button>
+<button onclick="abrirPaquete(2)">Paquete 2</button>
+<button onclick="abrirPaquete(3)">Paquete 3</button>
+<button onclick="abrirPaquete(4)">Paquete 4</button>
+<button onclick="abrirPaquete(5)">Paquete 5</button>
+<button onclick="abrirPaquete(6)">Paquete 6</button>
+<button onclick="abrirPaquete(7)">Paquete 7</button>
+<button onclick="abrirPaquete(8)">Paquete 8</button>
+<button onclick="abrirPaquete(9)">Paquete 9</button>
+<button onclick="abrirPaquete(10)">Paquete 10</button>
+</div>
+<div id="pistasContenido"></div>
+</section>
+
+
+<section>
+<h3>Mensaje final</h3>
+<input id="inputFinal" placeholder="Mensaje descifrado">
+<button onclick="verificarVictoria()">Verificar</button>
+</section>
+
+
+<script src="config/gameConfig.js"></script>
+<script src="js/cipher.js"></script>
+<script src="js/pistas.js"></script>
+<script src="js/victory.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

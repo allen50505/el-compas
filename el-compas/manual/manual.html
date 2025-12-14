@@ -1,0 +1,138 @@
+╔══════════════════════════════════════════════════════════════╗
+║                         EL COMPÁS                            ║
+║           Manual completo de cifrado y descifrado            ║
+╚══════════════════════════════════════════════════════════════╝
+
+1. DESCRIPCIÓN GENERAL
+
+“El Compás” es un sistema de cifrado determinista basado en el
+movimiento de un estado interno sobre el abecedario. Las letras
+no se sustituyen directamente: el texto cifrado es la lectura
+sucesiva del estado a medida que este se desplaza.
+
+El sistema posee memoria: cada paso depende del anterior.
+
+---------------------------------------------------------------
+
+2. ABECEDARIO
+
+Se utiliza el abecedario latino sin la letra ñ:
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+El desplazamiento es circular:
+- después de Z continúa A
+- antes de A continúa Z
+
+---------------------------------------------------------------
+
+3. ESTADO INICIAL
+
+El sistema comienza con un ESTADO INICIAL, que es una letra del
+abecedario.
+
+Este estado:
+- no aparece en el texto cifrado
+- debe ser conocido para cifrar y descifrar
+- determina todo el desarrollo del mensaje
+
+---------------------------------------------------------------
+
+4. SECUENCIA NUMÉRICA
+
+Cada letra del mensaje cifrado está precedida por un número N.
+
+El número N:
+- indica cuántas posiciones se mueve el estado
+- no representa ninguna letra
+- es independiente del texto original
+
+---------------------------------------------------------------
+
+5. DESPLAZAMIENTO DEL ESTADO
+
+Para cada número N:
+
+1. Mover el estado N posiciones sobre el abecedario.
+2. El movimiento es siempre en el mismo sentido.
+3. El movimiento es circular.
+
+Ejemplo:
+Estado actual: D
+N = 3
+Nuevo estado: G
+
+---------------------------------------------------------------
+
+6. OBTENCIÓN DE LA LETRA CIFRADA
+
+Luego de desplazar el estado:
+
+- la letra correspondiente al nuevo estado es la letra cifrada
+- esa letra se escribe en el texto cifrado
+
+El texto cifrado se construye como la secuencia de estas letras.
+
+---------------------------------------------------------------
+
+7. PROCEDIMIENTO DE CIFRADO
+
+Para cifrar un mensaje:
+
+1. Elegir un estado inicial.
+2. Para cada letra del mensaje original:
+   a) Elegir un número N.
+   b) Desplazar el estado N posiciones.
+   c) Escribir la letra del estado resultante.
+3. Repetir hasta finalizar el mensaje.
+
+---------------------------------------------------------------
+
+8. PROCEDIMIENTO DE DESCIFRADO
+
+Para descifrar un mensaje:
+
+1. Conocer el estado inicial.
+2. Leer el primer número N.
+3. Desplazar el estado N posiciones.
+4. Leer la letra correspondiente al estado.
+5. Repetir para cada número del mensaje.
+
+El mensaje original se obtiene directamente de la secuencia de
+letras resultantes.
+
+---------------------------------------------------------------
+
+9. PROPIEDADES DEL SISTEMA
+
+- Determinista.
+- Acumulativo.
+- Sin sustitución directa.
+- El orden de los números es crítico.
+- No existe relación fija número–letra.
+
+---------------------------------------------------------------
+
+10. EJEMPLO COMPLETO
+
+Estado inicial: C
+Secuencia numérica: 2, 1, 3
+
+Proceso:
+C + 2 → E
+E + 1 → F
+F + 3 → I
+
+Texto resultante: EFI
+
+---------------------------------------------------------------
+
+11. LIMITACIONES
+
+- No posee clave variable.
+- Si se conoce el estado inicial, el sistema es reversible.
+- No oculta la longitud del mensaje.
+
+╔══════════════════════════════════════════════════════════════╗
+║                        FIN DEL MANUAL                        ║
+╚══════════════════════════════════════════════════════════════╝
